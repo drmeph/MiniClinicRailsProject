@@ -18,6 +18,13 @@ Rails.application.routes.draw do
   get 'patient/delete'
   get 'patient/update'
 
+  get 'encounter/new'
+  post 'encounter/create'
+  patch 'encounter/update'
+  get 'encounter/show'
+  get 'encounter/edit'
+  get 'encounter/delete'
+
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 
