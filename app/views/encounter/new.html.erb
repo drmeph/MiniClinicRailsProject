@@ -23,6 +23,7 @@
   <label for = "encounter_bed">Bed</label>:
   <%= f.text_field 'bed' %>
   <span><%= show_errors(@encounter, :bed) %></span>
+  <%= f.hidden_field 'patient_id' %>
 </div>
 <%= submit_tag "Submit" %>
 <%= link_to 'Back', {:controller => 'patient', :action => 'show', :id => @encounter.patient_id} %>

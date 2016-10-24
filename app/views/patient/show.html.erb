@@ -13,7 +13,7 @@
 
 <hr />
 <p><%= link_to "Add Encounter", {:controller => 'encounter', :action => 'new', :patient_id => @patient.id}%></p>
-<% if @encounters.blank? %>
+<% if @patient.encounters.blank? %>
   <p>There are not any encounters currently for this patient.</p>
 <% else %>
   <p>These are the current encounters for the patient</p>
@@ -25,7 +25,7 @@
       <th>Actions</th>
     </tr>
 
-    <% @encounters.each do |p| %>
+    <% @patient.encounters.each do |p| %>
     <tr>
       <td><%= p.visitnumber %></td>
       <td>
