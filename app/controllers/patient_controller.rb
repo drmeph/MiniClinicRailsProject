@@ -1,5 +1,5 @@
 class PatientController < ApplicationController
-  layout 'standard'
+  layout 'application'
   def list
     @patients = Patient.all
   end

@@ -13,13 +13,21 @@ input {
    margin-bottom: 5px;
 }
 
-p {
+div {
    line-height: 150%;
 }
 
 div#container {
    width: 760px;
    margin: 0 auto;
+}
+
+table {
+  width: 100%;
+}
+
+span {
+    color: red
 }
 
 div#header {
@@ -29,7 +37,7 @@ div#header {
 
 div#content {
    float: left;
-   width: 450px;
+   width: 85%;
    padding: 10px;
 }
 
@@ -37,29 +45,22 @@ div#content h3 {
    margin-top: 15px;
 }
 
-ul#books {
-   list-style-type: none;
+table {
+  border-collapse: collapse;
 }
 
-ul#books li {
-   line-height: 140%;
+tr th {
+  border-bottom:1pt solid black;
+  padding-bottom: 1em;
 }
 
-div#sidebar {
-   width: 200px;
-   margin-left: 480px;
+tr td {
+  padding: 1em;
+
 }
 
-ul#subjects {
-   width: 700px;
-   text-align: center;
-   padding: 5px;
-   background-color: #ececec;
-   border: 1px solid #ccc;
-   margin-bottom: 20px;
+table tr:nth-child(odd) td{
+  background-color: lightblue
 }
-
-ul#subjects li {
-   display: inline;
-   padding-left: 5px;
+table tr:nth-child(even) td{
 }

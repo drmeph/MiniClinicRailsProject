@@ -1,5 +1,5 @@
 class EncounterController < ApplicationController
-  layout 'standard'
+  layout 'application'
 
   def show
     @encounter = Encounter.find(params[:id])

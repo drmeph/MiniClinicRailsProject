@@ -2,21 +2,23 @@
 
 <%= form_for @encounter, :url =>{:action => 'update', :id =>@encounter} do |f| %>
 <div class="">
-  <strong>Visit Number:</strong> <%= f.text_field 'visitnumber' %>
+  <strong>Visit Number:</strong> <%= f.text_field 'visitnumber' %> -
   <span><%= show_errors(@encounter, :visitnumber) %></span>
-  <strong>Admitted At:</strong> <%= f.datetime_select 'admittedat' %>
+  <strong>Admitted At:</strong> <%= f.datetime_select 'admittedat' %> -
   <span><%= show_errors(@encounter, :admittedat) %></span>
   <strong>Discharged At:</strong> <%= f.datetime_select 'discharedat', :prompt => { :day => 'Select day', :month => 'Select month', :year => 'Select year' } %>
   <span><%= show_errors(@encounter, :discharedat) %></span>
 </div>
+<br>
 <div class="">
-  <strong>Location:</strong> <%= f.text_field 'location' %>
+  <strong>Location:</strong> <%= f.text_field 'location' %> -
   <span><%= show_errors(@encounter, :location) %></span>
-  <strong>Room:</strong> <%= f.text_field 'room' %>
+  <strong>Room:</strong> <%= f.text_field 'room' %> -
   <span><%= show_errors(@encounter, :room) %></span>
   <strong>Bed:</strong> <%= f.text_field 'bed' %>
   <span><%= show_errors(@encounter, :bed) %></span>
 </div>
 <%= submit_tag "Submit" %>
+<br>
 <%= link_to 'Back', {:controller => 'patient', :action => 'show', :id => @encounter.patient_id} %>
 <% end %>

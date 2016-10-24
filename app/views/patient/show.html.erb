@@ -1,13 +1,13 @@
 <h1><%= @patient.firstname %></h1>
 
 <div>
-   <strong>First Name: </strong> <%= @patient.firstname %>
-   <strong>Middle Name: </strong> <%= @patient.middlename %>
+   <strong>First Name: </strong> <%= @patient.firstname %> -
+   <strong>Middle Name: </strong> <%= @patient.middlename %> -
    <strong>Last Name: </strong> <%= @patient.lastname %>
 </div>
 <div>
-   <strong>Weight: </strong> <%= @patient.weight %>
-   <strong>Height: </strong> <%= @patient.height %>
+   <strong>Weight: </strong> <%= @patient.weight %> -
+   <strong>Height: </strong> <%= @patient.height %> - 
    <strong>MRN: </strong> <%= @patient.mrn %>
 </div>
 
@@ -34,9 +34,11 @@
       <td>
         <%= p.discharedat %>
       </td>
-      <td><%= link_to 'SHOW', {:controller => 'encounter', :action => 'show', :id => p.id}%></td>
-      <td><%= link_to 'EDIT', {:controller => 'encounter', :action => 'edit', :id => p.id}%></td>
-      <td><%= link_to "DESTROY", {:controller => 'encounter', :action => 'delete', :id => p.id}, data: {confirm: "Are you sure you want to delete this encounter?"} %></td>
+      <td>
+        <%= link_to 'SHOW', {:controller => 'encounter', :action => 'show', :id => p.id}%>
+        <%= link_to 'EDIT', {:controller => 'encounter', :action => 'edit', :id => p.id}%>
+        <%= link_to "DESTROY", {:controller => 'encounter', :action => 'delete', :id => p.id}, data: {confirm: "Are you sure you want to delete this encounter?"} %>
+      </td>
     </tr>
     <% end %>
   </table>

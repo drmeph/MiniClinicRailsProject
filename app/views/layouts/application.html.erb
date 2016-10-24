@@ -1,14 +1,28 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>ThinkResearchRailsProject</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <title>Clinic Info System</title>
+  <%= stylesheet_link_tag    'style', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
+
+
 <body>
+   <div id = "container">
 
-<%= yield %>
+      <div id = "header">
+         <h1>Clinic Info System</h1>
+         <h3>website powered by Ruby on Rails</h3>
+      </div>
 
+      <div id = "content">
+         <%= yield -%>
+      </div>
+
+      <div id = "sidebar"></div>
+
+   </div>
 </body>
+
 </html>

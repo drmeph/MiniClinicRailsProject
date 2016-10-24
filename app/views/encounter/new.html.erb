@@ -3,22 +3,22 @@
 <%= form_for @encounter, :url =>{:action => 'create'} do |f| %>
 <div>
 <label for = "encounter_visitnumber">Visit Number</label>:
-<%= f.text_field 'visitnumber' %>
+<%= f.text_field 'visitnumber' %> -
 <span><%= show_errors(@encounter, :visitnumber) %></span>
 <label for = "encounter_admittedat">Admitted At</label>:
-<%= f.datetime_select 'admittedat' %>
+<%= f.datetime_select 'admittedat' %> -
 <span><%= show_errors(@encounter, :admittedat) %></span>
 <label for = "encounter_dischardedat">Discharged At</label>:
 <%= f.datetime_select 'discharedat', :prompt => { :day => 'Select day', :month => 'Select month', :year => 'Select year' } %>
 <span><%= show_errors(@encounter, :discharedat) %></span>
 </div>
-
+<br>
 <div>
   <label for = "encounter_location">Location</label>:
-  <%= f.text_field 'location' %>
+  <%= f.text_field 'location' %> -
   <span><%= show_errors(@encounter, :location) %></span>
   <label for = "encounter_room">Room</label>:
-  <%= f.text_field 'room' %>
+  <%= f.text_field 'room' %> -
   <span><%= show_errors(@encounter, :room) %></span>
   <label for = "encounter_bed">Bed</label>:
   <%= f.text_field 'bed' %>
@@ -26,5 +26,6 @@
   <%= f.hidden_field 'patient_id' %>
 </div>
 <%= submit_tag "Submit" %>
+<br>
 <%= link_to 'Back', {:controller => 'patient', :action => 'show', :id => @encounter.patient_id} %>
 <% end -%>
