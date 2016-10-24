@@ -6,7 +6,7 @@ class Encounter < ActiveRecord::Base
 
   def discharge_date_is_possible?
     if !discharedat.blank?
-      if :discharedat > :admittedat
+      if discharedat < admittedat
         errors.add(:discharedat, 'must me after admission date')
       end
     end

@@ -1,9 +1,6 @@
 require 'test_helper'
 
 class PatientTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
 
   test "should not save patient without firstname" do
     patient = Patient.new

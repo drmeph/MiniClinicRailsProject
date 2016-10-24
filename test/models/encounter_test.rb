@@ -1,9 +1,6 @@
 require 'test_helper'
 
 class EncounterTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
 
   test "should not save encounter without visitnumber" do
     encounter = Encounter.new
