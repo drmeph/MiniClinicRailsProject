@@ -1,10 +1,12 @@
 class PatientController < ApplicationController
+  layout 'standard'
   def list
     @patients = Patient.all
   end
 
   def show
     @patient = Patient.find(params[:id])
+    @encounters = Encounter.where(patient_id: params[:id])
   end
 
   def new

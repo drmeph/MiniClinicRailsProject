@@ -35,7 +35,10 @@ class EncounterController < ApplicationController
   end
 
   def delete
-
+    @encounter = Encounter.find(params[:id])
+    patient_id = @encounter.patient_id
+    @encounter.destroy
+    redirect_to :controller => 'patient', :action => 'show', :id => patient_id
   end
 
   def encounter_params
