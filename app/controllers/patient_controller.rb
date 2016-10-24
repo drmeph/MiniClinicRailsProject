@@ -6,7 +6,6 @@ class PatientController < ApplicationController
 
   def show
     @patient = Patient.find(params[:id])
-    @encounters = Encounter.where(patient_id: params[:id])
   end
 
   def new
