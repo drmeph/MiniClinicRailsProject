@@ -1,0 +1,17 @@
+<h1><%= @encounter.visitnumber %></h1>
+
+<div>
+   <strong>Visit Number: </strong> <%= @encounter.visitnumber %>
+   <strong>Admitted At: </strong> <%= @encounter.admittedat %>
+   <strong>Discharged At: </strong> <%= @encounter.discharedat %>
+</div>
+<div>
+   <strong>Location: </strong> <%= @encounter.location %>
+   <strong>Room: </strong> <%= @encounter.room %>
+   <strong>Bed: </strong> <%= @encounter.bed %>
+</div>
+<div>
+  <%= link_to 'Back', {:controller => 'patient', :action => 'show', :id => @encounter.patient_id} %>
+  <%= link_to 'Edit', {:action => 'edit', :id => @encounter} %>
+  <%= link_to 'Destroy', {:action => 'delete', :id => @encounter}, data: {confirm: "Are you sure you want to delete this encounter?"} %>
+</div>

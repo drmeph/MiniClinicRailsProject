@@ -1,0 +1,47 @@
+<h1><%= @patient.firstname %></h1>
+
+<div>
+   <strong>First Name: </strong> <%= @patient.firstname %>
+   <strong>Middle Name: </strong> <%= @patient.middlename %>
+   <strong>Last Name: </strong> <%= @patient.lastname %>
+</div>
+<div>
+   <strong>Weight: </strong> <%= @patient.weight %>
+   <strong>Height: </strong> <%= @patient.height %>
+   <strong>MRN: </strong> <%= @patient.mrn %>
+</div>
+
+<hr />
+<p><%= link_to "Add Encounter", {:controller => 'encounter', :action => 'new', :patient_id => @patient.id}%></p>
+<% if @encounters.blank? %>
+  <p>There are not any encounters currently for this patient.</p>
+<% else %>
+  <p>These are the current encounters for the patient</p>
+  <table>
+    <tr>
+      <th>Visit Number</th>
+      <th>Admitted At</th>
+      <th>Discharged At</th>
+      <th>Actions</th>
+    </tr>
+
+    <% @encounters.each do |p| %>
+    <tr>
+      <td><%= p.visitnumber %></td>
+      <td>
+        <%= p.admittedat %>
+      </td>
+      <td>
+        <%= p.discharedat %>
+      </td>
+      <td><%= link_to 'SHOW', {:controller => 'encounter', :action => 'show', :id => p.id}%></td>
+      <td><%= link_to 'EDIT', {:controller => 'encounter', :action => 'edit', :id => p.id}%></td>
+      <td><%= link_to "DESTROY", {:action => 'delete', :id => p.id}, data: {confirm: "Are you sure you want to delete this encounter?"} %></td>
+    </tr>
+    <% end %>
+  </table>
+
+    </table>
+<% end %>
+
+<%= link_to 'Back', {:action => 'list'} %>

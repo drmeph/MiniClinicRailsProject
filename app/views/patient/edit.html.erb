@@ -1,0 +1,24 @@
+<h1>Edit Patient Details</h1>
+
+<%= form_for @patient, :url =>{:action => "update", :id =>@patient} do |f| %>
+<div>
+First Name: <%= f.text_field 'firstname' %>
+<span><%= show_errors(@patient, :firstname) %></span>
+Middle Name: <%= f.text_field 'middlename' %>
+<span><%= show_errors(@patient, :middlename) %></span>
+Last Name: <%= f.text_field 'lastname' %>
+<span><%= show_errors(@patient, :lastname) %></span>
+</div>
+<div>
+Weight: <%= f.text_field 'weight' %>
+<span><%= show_errors(@patient, :weight) %></span>
+Height: <%= f.text_field 'height' %>
+<span><%= show_errors(@patient, :height) %></span>
+MRN: <%= f.text_field 'mrn' %>
+<span><%= show_errors(@patient, :mrn) %></span>
+</div>
+
+<%= f.submit "Save changes" %>
+<% end %>
+
+<%= link_to 'Back', {:action => 'list' } %>

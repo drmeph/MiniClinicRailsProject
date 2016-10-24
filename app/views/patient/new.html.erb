@@ -1,0 +1,30 @@
+<h1>Add Patient</h1>
+
+<%= form_tag :action => 'create' do %>
+<div>
+<label for = "patient_firstname">First Name</label>:
+<%= text_field 'patients', 'firstname' %>
+<span><%= show_errors(@patient, :firstname) %></span>
+<label for = "patient_middlename">Middle Name</label>:
+<%= text_field 'patients', 'middlename' %>
+<span><%= show_errors(@patient, :middlename) %></span>
+<label for = "patient_lastname">Last Name</label>:
+<%= text_field 'patients', 'lastname' %>
+<span><%= show_errors(@patient, :lastname) %></span>
+</div>
+
+<div>
+<label for = "patient_weight">Weight</label>:
+<%= text_field 'patients', 'weight' %>
+<span><%= show_errors(@patient, :weight) %></span>
+<label for = "patient_height">Height</label>:
+<%= text_field 'patients', 'height' %>
+<span><%= show_errors(@patient, :height) %></span>
+<label for = "patient_mrn">MRN</label>:
+<%= text_field 'patients', 'mrn' %>
+<span><%= show_errors(@patient, :mrn) %></span>
+</div>
+<%= submit_tag "Submit" %>
+
+<% end -%>
+<%= link_to 'Back', {:action => 'list'} %>

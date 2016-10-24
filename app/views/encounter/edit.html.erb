@@ -1,0 +1,16 @@
+<h1>Edit Encounter Details</h1>
+
+<%= form_for @encounter, :url =>{:action => 'update', :id =>@encounter} do |f| %>
+<div class="">
+  <strong>Visit Number:</strong> <%= f.text_field 'visitnumber' %>
+  <strong>Admitted At:</strong> <%= f.datetime_select 'admittedat' %>
+  <strong>Discharged At:</strong> <%= f.datetime_select 'discharedat', :prompt => { :day => 'Select day', :month => 'Select month', :year => 'Select year' } %>
+</div>
+<div class="">
+  <strong>Location:</strong> <%= f.text_field 'location' %>
+  <strong>Room:</strong> <%= f.text_field 'room' %>
+  <strong>Bed:</strong> <%= f.text_field 'bed' %>
+</div>
+<%= submit_tag "Submit" %>
+<%= link_to 'Back', {:controller => 'patient', :action => 'show', :id => @encounter.patient_id} %>
+<% end %>
